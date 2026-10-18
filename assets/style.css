@@ -321,3 +321,4 @@ a{color:inherit}
   .hero-bar{flex-direction:column;align-items:flex-start}
   .ticks-row button{width:20px}
 }
+.stage-hero > .wrap{width:100%}
