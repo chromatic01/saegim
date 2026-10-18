@@ -251,3 +251,8 @@ a{color:inherit}
 .head.stage .nav a{color:var(--stage-muted)}
 .head.stage .nav a:hover,.head.stage .nav a[aria-current="page"]{color:var(--stage-ink);border-bottom-color:var(--stage-ink)}
 .head.stage .mark small{color:var(--stage-muted)}
+
+/* 홈 · 새김은 (문단 정렬) */
+.statement{display:grid;gap:2em;max-width:34em;font-family:var(--serif);font-weight:300;font-size:clamp(18px,2vw,21px);line-height:1.95;letter-spacing:-.005em}
+.statement b{font-weight:500}
+@media (max-width:720px){.statement .br{display:none}.statement{gap:1.5em}}
