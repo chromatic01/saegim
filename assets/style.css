@@ -8,7 +8,7 @@
   --violet:#4f3f69; --violet-ink:#3d3052;
   --serif:"Hahmlet","Noto Serif KR","AppleMyungjo",serif;
   --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --mono:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif; /* 숫자용: 0에 점 없는 글꼴 */
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -322,3 +322,28 @@ a{color:inherit}
   .ticks-row button{width:20px}
 }
 .stage-hero > .wrap{width:100%}
+
+/* 숫자 정렬 */
+body{font-variant-numeric:tabular-nums}
+
+/* 기록 상세 머리 (흰 배경) */
+.rec-meta{color:var(--muted)}
+.rec-tag{color:var(--muted);border-top-color:var(--line)}
+.back{color:var(--muted)}
+.back:hover{color:var(--ink)}
+.rec-hero img{aspect-ratio:16/8}
+
+/* 기록 목록 */
+.records{border-top:1px solid var(--ink)}
+.records > li{border-bottom:1px solid var(--line)}
+.record{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px;align-items:center;padding:40px 0;text-decoration:none;color:inherit}
+.record figure img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.record-text{display:grid;gap:10px;justify-items:start}
+.record-no{font-family:var(--serif);font-size:15px;letter-spacing:.06em;color:var(--muted)}
+.record-t{font-family:var(--serif);font-weight:300;font-size:clamp(32px,4vw,46px);line-height:1.2}
+.record-sub{font-family:var(--serif);font-size:18px;line-height:1.5}
+.record-info{display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 12px;margin-top:14px;font-size:14px}
+.record-info dt{color:var(--muted);font-size:12.5px;letter-spacing:.1em;padding-top:1px}
+.record-go{margin-top:18px;font-size:14px;padding-bottom:4px;border-bottom:1px solid var(--ink)}
+.record:hover .record-go{border-bottom-color:var(--violet);color:var(--violet)}
+@media (max-width:720px){.record{grid-template-columns:minmax(0,1fr);gap:24px;padding:28px 0}}
