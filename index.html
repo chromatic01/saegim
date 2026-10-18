@@ -4,266 +4,72 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>새김</title>
+<meta name="description" content="울산의 무대가, 기록으로 남는 곳. 30~70석 소규모 클래식 공연을 대관부터 기획, 홍보, 촬영까지 함께 준비합니다.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="새김 · 울산의 무대가, 기록으로 남는 곳">
-<meta property="og:description" content="30~70석 소규모 클래식 공연을 대관부터 기획, 홍보, 촬영까지 함께 준비합니다.">
+<meta property="og:site_name" content="새김 SAEGIM">
+<meta property="og:title" content="새김">
+<meta property="og:description" content="울산의 무대가, 기록으로 남는 곳. 30~70석 소규모 클래식 공연을 대관부터 기획, 홍보, 촬영까지 함께 준비합니다.">
 <meta property="og:image" content="https://chromatic01.github.io/saegim/img/hero.jpg">
 <meta property="og:url" content="https://chromatic01.github.io/saegim/">
 <meta name="theme-color" content="#fafafa">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111113'/%3E%3Crect x='40' y='40' width='12' height='12' fill='%234f3f69'/%3E%3C/svg%3E">
-<meta name="description" content="울산의 무대가, 기록으로 남는 곳. 30~70석 소규모 클래식 공연을 대관부터 기획, 홍보, 촬영까지 함께 준비합니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
-<style>
-/* 시안 A · 흑과 백. 흰 종이 위 검은 글씨, 기록 섹션만 검은 무대.
-   사진은 흑백으로 두고 보는 순간 색이 돌아온다. 보라는 행동(소식 받기)에만. 의도적 단일(밝은) 테마. */
-:root{
-  color-scheme:light;
-  --bg:#fafafa; --ink:#111113; --muted:#66666b; --line:#dcdcde;
-  --stage:#0f0f11; --stage-ink:#ededee; --stage-muted:#8e8e94; --stage-line:#2c2c30;
-  --violet:#4f3f69; --violet-ink:#3d3052;
-  --serif:"Hahmlet","Noto Serif KR","AppleMyungjo",serif;
-  --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-}
-*{box-sizing:border-box}
-[hidden]{display:none!important}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.7}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-h1,h2,h3{margin:0;text-wrap:balance;font-weight:inherit}
-p,ul,ol,figure{margin:0}
-ul,ol{padding:0;list-style:none}
-img{display:block;max-width:100%;height:auto}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-
-/* 흑백 → 색: 마우스를 올리거나(데스크톱), 화면 가운데로 스크롤하면(휴대폰) 색이 돌아온다 */
-.mono{filter:grayscale(1);transition:filter .7s ease}
-@media (hover:hover){.tint:hover .mono{filter:none}}
-@media (hover:none){.mono.seen{filter:none}}
-@media (prefers-reduced-motion:reduce){.mono{transition:none}}
-
-/* 머리말 */
-.head .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-block:26px}
-.mark{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.02em;display:flex;align-items:baseline;gap:10px;text-decoration:none}
-.mark small{font-family:var(--sans);font-size:11px;letter-spacing:.24em;color:var(--muted);font-weight:500}
-.nav{display:flex;gap:26px;font-size:13.5px}
-.nav a{text-decoration:none;color:var(--muted)}
-.nav a:hover{color:var(--ink)}
-
-/* 첫 화면 */
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:end;padding-block:56px 96px}
-.eyebrow{font-size:12px;letter-spacing:.2em;color:var(--muted)}
-.h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5.6vw,64px);line-height:1.22;letter-spacing:-.02em;margin-top:22px}
-.h1 b{font-weight:600}
-.lead{margin-top:26px;color:var(--muted);max-width:30em;font-size:16px}
-.cta{display:inline-flex;align-items:center;gap:14px;background:var(--violet);color:#fff;text-decoration:none;padding:15px 24px;font-size:14.5px;font-weight:500;letter-spacing:.02em}
-.cta:hover{background:var(--violet-ink)}
-.cta span{font-family:var(--mono);font-size:12px;opacity:.8}
-.hero .cta{margin-top:36px}
-.hero figure img{aspect-ratio:4/3.1;object-fit:cover;width:100%}
-.cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:var(--muted)}
-
-/* 공통 섹션 */
-.sec{padding-block:104px;border-top:1px solid var(--line)}
-.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;align-items:start;margin-bottom:56px}
-.h2{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.6vw,40px);line-height:1.3;letter-spacing:-.015em}
-.side{font-size:12px;letter-spacing:.2em;color:var(--muted);padding-top:12px}
-.sub{margin-top:18px;max-width:30em;color:var(--muted)}
-
-/* 하는 일 */
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
-.steps img{aspect-ratio:3/4;object-fit:cover;width:100%}
-.step-n{display:flex;justify-content:space-between;margin-top:18px;padding-top:12px;border-top:1px solid var(--ink);font-size:12px;letter-spacing:.12em}
-.step-n i{font-style:normal;color:var(--muted)}
-.step-t{font-family:var(--serif);font-size:20px;font-weight:500;margin-top:10px}
-.step-d{font-size:13.5px;color:var(--muted);margin-top:6px}
-.proof{font-size:12.5px;color:var(--muted);margin-top:28px}
-
-/* 기록 (검은 무대) */
-.stage{background:var(--stage);color:var(--stage-ink);padding-block:112px}
-.stage .side,.stage .sub{color:var(--stage-muted)}
-.slots{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:24px;align-items:start}
-.slot img,.empty{aspect-ratio:16/10.5;width:100%;object-fit:cover}
-.empty{border:1px dashed var(--stage-line);display:grid;place-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--stage-muted)}
-.slot-meta{margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--stage-muted);letter-spacing:.06em}
-.slot-t{font-family:var(--serif);font-size:18px;margin-top:6px;line-height:1.45}
-.slot-s{font-size:12.5px;color:var(--stage-muted);margin-top:4px}
-
-/* 만드는 사람 */
-.founder{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:64px;align-items:start}
-.founder > img{aspect-ratio:4/5;object-fit:cover;width:100%}
-.name{font-family:var(--serif);font-size:clamp(28px,3.4vw,38px);font-weight:500;letter-spacing:-.01em}
-.name small{font-family:var(--sans);font-size:14px;color:var(--muted);font-weight:400;margin-left:12px;letter-spacing:0}
-.bio{margin-top:16px;max-width:34em;color:var(--muted)}
-.cv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:48px}
-.cv h3{font-size:12px;letter-spacing:.2em;color:var(--muted);padding-bottom:12px;border-bottom:1px solid var(--ink)}
-.cv li{padding:13px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.55}
-.cv .d{display:block;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:2px}
-.cv .s{display:block;font-size:12.5px;color:var(--muted)}
-.cv .soon{color:var(--violet);margin-left:8px}
-
-/* 소식 받기 */
-.subscribe{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end}
-.sub-box{display:grid;gap:18px;justify-items:start}
-.sub-box p{color:var(--muted);max-width:28em}
-.privacy{font-size:12.5px}
-.cta[aria-disabled="true"]{background:#8a8490;cursor:default;pointer-events:none}
-
-/* 꼬리말 */
-.foot{border-top:1px solid var(--line)}
-.foot .wrap{display:grid;gap:18px;padding-block:44px 56px}
-.invite{font-family:var(--serif);font-size:20px}
-.invite a{font-family:var(--sans);font-size:14px;margin-left:10px;text-underline-offset:4px}
-.foot-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
-
-@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:720px){
-  .nav{display:none}
-  .hero .wrap,.sec-head,.founder,.subscribe{grid-template-columns:minmax(0,1fr)}
-  .hero .wrap{gap:36px;padding-block:28px 72px}
-  .sec,.stage{padding-block:72px}
-  .sec-head{gap:12px;margin-bottom:36px}
-  .slots{grid-template-columns:minmax(0,1fr)}
-  .cv{grid-template-columns:minmax(0,1fr);gap:28px}
-  .founder > img{max-width:280px}
-  .founder,.subscribe{gap:32px}
-  .invite a{display:inline-block;margin:6px 0 0}
-}
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
 <header class="head">
   <div class="wrap">
-    <a class="mark" href="#top" id="top">새김 <small>SAEGIM</small></a>
-    <nav class="nav" aria-label="메뉴"><a href="#process">하는 일</a><a href="#archive">기록</a><a href="#founder">만드는 사람</a><a href="#subscribe">소식 받기</a></nav>
+    <a class="mark" href="index.html">새김 <small>SAEGIM</small></a>
+    <nav class="nav" aria-label="메뉴"><a href="work.html">하는 일</a><a href="archive.html">기록</a><a href="about.html">만드는 사람</a><a href="join.html">함께하기</a></nav>
   </div>
 </header>
-
 <main>
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">울산 · 소규모 클래식 공연</p>
-        <h1 class="h1">울산의 무대가,<br><b>기록</b>으로 남는 곳.</h1>
-        <p class="lead">30~70석의 작은 무대에서 열리는 클래식 공연을 대관부터 기획, 홍보, 촬영까지 함께 준비합니다.</p>
-        <a class="cta" href="#subscribe">다음 공연 소식 받기 <span>↓</span></a>
-      </div>
-      <figure class="tint">
-        <img class="mono" src="img/hero.jpg" alt="객석 뒤에서 바라본 무대, 그랜드 피아노 앞에서 연주하는 모습" width="1344" height="754">
-        <figcaption class="cap"><span>〈MIRROR〉 신지훈 &amp; 황수정</span><span>2026.08.22 · 벨노드아트홀</span></figcaption>
-      </figure>
-    </div>
-  </section>
 
-  <section class="sec" id="process">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="side">하는 일</p>
-        <h2 class="h2">연주자는<br>연주에만 집중하세요.</h2>
-      </div>
-      <ol class="steps">
-        <li class="tint"><img class="mono" src="img/hall.jpg" alt="빈 공연장, 그랜드 피아노 앞에 앉은 연주자" width="1000" height="667"><p class="step-n"><span>01</span><i>대관</i></p><h3 class="step-t">공간 찾기</h3><p class="step-d">울산의 30~70석 공간을 찾아 연결합니다.</p></li>
-        <li class="tint"><img class="mono" src="img/host.jpg" alt="마이크를 들고 관객 앞에서 공연을 진행하는 모습" width="1000" height="750"><p class="step-n"><span>02</span><i>기획</i></p><h3 class="step-t">무대 설계</h3><p class="step-d">프로그램 구성, 공연 이름, 진행 순서를 함께 정합니다.</p></li>
-        <li class="tint"><img class="mono" src="img/pamphlet.jpg" alt="꽃병 옆에 세워진 MIRROR 공연 팸플릿" width="1000" height="1333"><p class="step-n"><span>03</span><i>홍보</i></p><h3 class="step-t">알리기</h3><p class="step-d">포스터, 팸플릿, SNS 콘텐츠를 만듭니다.</p></li>
-        <li class="tint"><img class="mono" src="img/hands.jpg" alt="위에서 내려다본 네 손의 피아노 연주" width="1000" height="667"><p class="step-n"><span>04</span><i>촬영·기록</i></p><h3 class="step-t">남기기</h3><p class="step-d">공연을 영상과 사진으로 남겨 기록 보관함에 올립니다.</p></li>
-      </ol>
-      <p class="proof">사진은 모두 〈MIRROR〉 리사이틀에서 직접 해본 일입니다.</p>
-    </div>
-  </section>
-
-  <section class="stage" id="archive">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="side">기록</p>
-        <div>
-          <h2 class="h2">무대가 끝나도,<br>기록은 남습니다.</h2>
-          <p class="sub">새김에서 열리는 공연은 이곳에 차례로 남습니다. 첫 칸은 새김을 시작하게 한 무대입니다.</p>
-        </div>
-      </div>
-      <div class="slots">
-        <div class="slot tint"><img class="mono" src="img/duo.jpg" alt="두 연주자가 한 피아노 앞에 나란히 앉아 연주하는 모습" width="1000" height="667"><p class="slot-meta">No. 000 · 2026.08.22</p><p class="slot-t">〈MIRROR〉 신지훈 &amp; 황수정<br>사제 피아노 조인트 리사이틀</p><p class="slot-s">벨노드아트홀 · 기획 신지훈</p></div>
-        <div class="slot"><div class="empty">No. 001</div><p class="slot-meta">다음 기록</p></div>
-        <div class="slot"><div class="empty">No. 002</div><p class="slot-meta">다음 기록</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="founder">
-    <div class="wrap founder">
-      <img src="img/portrait.jpg" alt="신지훈 흑백 프로필 사진" width="1000" height="1249">
-      <div>
-        <p class="side" style="padding:0 0 18px">만드는 사람</p>
-        <h2 class="name">신지훈<small>피아노 연주자</small></h2>
-        <p class="bio">공연을 직접 기획하고, 홍보물을 만들고, 무대에 서 왔습니다. 회계를 전공하며 공연을 숫자로도 읽습니다.</p>
-        <div class="cv">
-          <div>
-            <h3>연주</h3>
-            <ul>
-              <li><span class="d">2026.02</span>제1회 클래시카 서울 신인음악회<span class="s">클래시카 서울</span></li>
-              <li><span class="d">2026.08</span>신지훈 &amp; 황수정 사제 피아노 조인트 리사이틀 〈MIRROR〉 기획·연주<span class="s">벨노드아트홀</span></li>
-              <li><span class="d">2026.11.07<span class="soon">예정</span></span>제3회 피아노마드 연주회<span class="s">부산 뮤지카오스</span></li>
-              <li><span class="d">2026.11.28<span class="soon">예정</span></span>ON Harmony 프로와 아마추어 동행 콘서트<span class="s">부산대학교 음악관 콘서트홀</span></li>
-            </ul>
-          </div>
-          <div>
-            <h3>수상</h3>
-            <ul>
-              <li>제1회 클래시카 서울 오디션 3위</li>
-              <li>제3회 유진온뮤직 아마추어 콩쿠르 2위</li>
-              <li>NEWS CLASSIC M 2026 국제음악콩쿠르 일반부 1위</li>
-              <li>제4회 숭실대학교 아마추어 피아노 콩쿠르 청년부 3위</li>
-              <li>제3회 한국교수법음악협회 전국음악콩쿠르 대회장상</li>
-              <li>제2회 NUNC 아마추어 피아노 콩쿠르 청년부 2위</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="subscribe">
-    <div class="wrap subscribe">
-      <div>
-        <p class="side" style="padding:0 0 18px">소식 받기</p>
-        <h2 class="h2">새 공연이 열리면<br>알려드릴게요.</h2>
-      </div>
-      <div class="sub-box">
-        <p>관객으로 듣고 싶은 분도, 연주자로 무대에 서고 싶은 분도 신청서 하나로 받습니다.</p>
-        <a class="cta" id="formLink" href="#subscribe" aria-disabled="true">신청서 열기 <span>↗</span></a>
-        <p class="privacy" id="formNote">신청서 연결을 준비하고 있습니다. 이름과 연락처는 공연 소식 안내에만 사용합니다.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
+<section class="hero">
   <div class="wrap">
-    <p class="invite">연주자라면, 함께 기록을 남겨요.<a href="https://www.instagram.com/sjh_.archive/" target="_blank" rel="noopener">이야기 나누기 →</a></p>
-    <div class="foot-row"><span>© 2026 새김 SAEGIM · 울산</span><a href="https://www.instagram.com/sjh_.archive/" target="_blank" rel="noopener">Instagram @sjh_.archive</a></div>
+    <div>
+      <p class="eyebrow">울산 · 소규모 클래식 공연</p>
+      <h1 class="h1">울산의 무대가,<br><b>기록</b>으로 남는 곳.</h1>
+      <p class="lead">30~70석의 작은 무대에서 열리는 클래식 공연을 대관부터 기획, 홍보, 촬영까지 함께 준비합니다.</p>
+      <a class="cta" href="join.html">다음 공연 소식 받기 <span>→</span></a>
+    </div>
+    <figure class="tint">
+      <img class="mono" src="img/hero.jpg" alt="객석 뒤에서 바라본 무대, 그랜드 피아노 앞에서 연주하는 모습" width="1344" height="754">
+      <figcaption class="cap"><span>〈MIRROR〉 신지훈 &amp; 황수정</span><span>2026.08.22 · 벨노드아트홀</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap intro">
+    <p class="side">새김은</p>
+    <div class="prose">
+      <p>연주하고 싶은 사람은 많지만, 그들이 부담 없이 무대에 설 수 있도록 이어 주는 곳은 드뭅니다. 연주자는 공간을 찾은 뒤에도 프로그램과 포스터, 홍보와 관객 모집, 촬영과 기록까지 혼자 해결해야 합니다.</p>
+      <p>새김은 그 과정을 하나로 잇습니다. 연주자는 연주에 집중하고, 한 번의 무대는 오래 남는 기록이 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <nav class="doors" aria-label="둘러보기">
+      <a class="door tint" href="work.html"><img class="mono" src="img/host.jpg" alt="" width="1000" height="750"><div><p class="door-t">하는 일</p><p class="door-d">대관, 기획, 홍보, 촬영·기록. 필요한 단계만 골라 맡길 수 있습니다.</p></div><span class="door-go">→</span></a>
+      <a class="door tint" href="archive.html"><img class="mono" src="img/duo.jpg" alt="" width="1000" height="667"><div><p class="door-t">기록</p><p class="door-d">새김에서 열린 무대가 차례로 남는 곳. 첫 칸은 〈MIRROR〉입니다.</p></div><span class="door-go">→</span></a>
+      <a class="door tint" href="about.html"><img class="mono" src="img/portrait.jpg" alt="" width="1000" height="1249" style="object-position:50% 25%"><div><p class="door-t">만드는 사람</p><p class="door-d">무대에 서고, 공연을 직접 만들어 온 피아노 연주자 신지훈.</p></div><span class="door-go">→</span></a>
+      <a class="door tint" href="join.html"><img class="mono" src="img/hands.jpg" alt="" width="1000" height="667"><div><p class="door-t">함께하기</p><p class="door-d">관객이라면 공연 소식을, 연주자라면 무대 상담을.</p></div><span class="door-go">→</span></a>
+    </nav>
+  </div>
+</section>
+
+</main>
+<footer class="foot" style="background:var(--bg)">
+  <div class="wrap">
+    <p class="invite">연주자라면, 함께 기록을 남겨요.<a href="join.html">함께하기 →</a></p>
+    <div class="foot-row"><span>© 2026 새김 SAEGIM · 울산</span><nav aria-label="외부 링크"><a href="https://www.instagram.com/sjh_.archive/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/channel/UCacmF7i-XSiqGQyUx3JiGMw" target="_blank" rel="noopener">YouTube</a></nav></div>
   </div>
 </footer>
-
-<script>
-(function(){
-  // 신청서 주소(네이버 폼·구글 폼)가 정해지면 여기에만 넣으면 됩니다.
-  const FORM_URL = 'https://naver.me/xwo3xqHB';
-  const link=document.getElementById('formLink'), note=document.getElementById('formNote');
-  if(FORM_URL){
-    link.href=FORM_URL; link.target='_blank'; link.rel='noopener'; link.removeAttribute('aria-disabled');
-    note.textContent='이름과 연락처는 공연 소식 안내에만 사용합니다.';
-  }
-  // 휴대폰: 사진이 화면 가운데에 오면 색이 돌아온다
-  if(window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in window){
-    const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('seen',e.isIntersecting)),{rootMargin:'-35% 0px -35% 0px'});
-    document.querySelectorAll('.mono').forEach(img=>io.observe(img));
-  }
-})();
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>
