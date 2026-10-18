@@ -256,3 +256,24 @@ a{color:inherit}
 .statement{display:grid;gap:2em;max-width:34em;font-family:var(--serif);font-weight:300;font-size:clamp(18px,2vw,21px);line-height:1.95;letter-spacing:-.005em}
 .statement b{font-weight:500}
 @media (max-width:720px){.statement .br{display:none}.statement{gap:1.5em}}
+
+/* 가운뎃점 대신 간격으로 나누는 정보 줄 */
+.rec-meta,.slot-meta,.feature-meta{display:flex;flex-wrap:wrap;gap:4px 20px}
+
+/* 홈 · 최근 기록 */
+.feature{padding-block:96px}
+.feature-card{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:72px;align-items:center;text-decoration:none;color:inherit}
+.feature-card figure img{width:100%;aspect-ratio:1000/1418;object-fit:cover}
+.feature-text{display:grid;gap:14px;justify-items:start}
+.feature-text .eyebrow{color:var(--stage-muted)}
+.feature-no{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--stage-muted);margin-top:10px}
+.feature-text .h2{font-size:clamp(34px,4.6vw,52px)}
+.feature-sub{font-family:var(--serif);font-weight:300;font-size:20px;line-height:1.6}
+.feature-meta{font-size:13px;color:var(--stage-muted)}
+.feature-go{margin-top:18px;font-size:14px;padding-bottom:4px;border-bottom:1px solid var(--stage-ink)}
+.feature-card:hover .feature-go{border-bottom-color:var(--violet)}
+@media (max-width:720px){
+  .feature{padding-block:64px}
+  .feature-card{grid-template-columns:minmax(0,1fr);gap:32px}
+  .feature-card figure{max-width:340px}
+}
